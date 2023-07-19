@@ -1,0 +1,38 @@
+%YAML:1.0
+---
+opencv_eigenfaces:
+   threshold: 1.7976931348623157e+308
+   num_components: 2
+   mean: !!opencv-matrix
+      rows: 1
+      cols: 2
+      dt: d
+      data: [ 0., 0. ]
+   eigenvalues: !!opencv-matrix
+      rows: 2
+      cols: 1
+      dt: d
+      data: [ 0., 0. ]
+   eigenvectors: !!opencv-matrix
+      rows: 2
+      cols: 2
+      dt: d
+      data: [ 1., 0., 0., 1. ]
+   projections:
+      - !!opencv-matrix
+         rows: 1
+         cols: 2
+         dt: d
+         data: [ 0., 0. ]
+      - !!opencv-matrix
+         rows: 1
+         cols: 2
+         dt: d
+         data: [ 0., 0. ]
+   labels: !!opencv-matrix
+      rows: 2
+      cols: 1
+      dt: i
+      data: [ 1, 1 ]
+   labelsInfo:
+      []

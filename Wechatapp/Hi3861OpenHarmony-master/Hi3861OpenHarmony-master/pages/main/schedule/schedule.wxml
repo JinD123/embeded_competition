@@ -1,0 +1,23 @@
+<!-- schedule.wxml -->
+<view class="container">
+  <view class="table">
+    <view class="table-header">
+      <text class="header-cell">时间</text>
+      <text class="header-cell">星期一</text>
+      <text class="header-cell">星期二</text>
+      <text class="header-cell">星期三</text>
+      <text class="header-cell">星期四</text>
+      <text class="header-cell">星期五</text>
+    </view>
+    <block wx:for="{{scheduleData}}" wx:key="time">
+      <view class="table-row">
+        <text class="table-cell">{{item.time}}</text>
+        <text class="table-cell">{{item.monday}}</text>
+        <text class="table-cell">{{item.tuesday}}</text>
+        <text class="table-cell">{{item.wednesday}}</text>
+        <text class="table-cell">{{item.thursday}}</text>
+        <text class="table-cell">{{item.friday}}</text>
+      </view>
+    </block>
+  </view>
+</view>

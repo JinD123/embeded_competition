@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>smart_classroom</class>
+ <widget class="QMainWindow" name="smart_classroom">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>927</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>智慧教室辅助系统</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1501</width>
+      <height>911</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="function_menu">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1500</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 9pt &quot;楷体&quot;;</string>
+   </property>
+   <widget class="QMenu" name="menufunction">
+    <property name="title">
+     <string>主要功能</string>
+    </property>
+    <addaction name="face_regist"/>
+    <addaction name="face_attendance"/>
+    <addaction name="in_class"/>
+    <addaction name="in_exam"/>
+    <addaction name="in_sleep"/>
+   </widget>
+   <widget class="QMenu" name="menuexit">
+    <property name="title">
+     <string>退出</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuabout_us">
+    <property name="title">
+     <string>关于我们</string>
+    </property>
+   </widget>
+   <addaction name="menufunction"/>
+   <addaction name="menuexit"/>
+   <addaction name="menuabout_us"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="face_regist">
+   <property name="text">
+    <string>人脸注册</string>
+   </property>
+  </action>
+  <action name="face_attendance">
+   <property name="text">
+    <string>打卡</string>
+   </property>
+  </action>
+  <action name="in_class">
+   <property name="text">
+    <string>课堂行为检测</string>
+   </property>
+  </action>
+  <action name="in_exam">
+   <property name="text">
+    <string>考试行为检测</string>
+   </property>
+  </action>
+  <action name="action122">
+   <property name="text">
+    <string>122</string>
+   </property>
+  </action>
+  <action name="action12">
+   <property name="text">
+    <string>12</string>
+   </property>
+  </action>
+  <action name="in_sleep">
+   <property name="text">
+    <string>午休行为检测</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

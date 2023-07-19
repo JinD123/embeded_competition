@@ -1,0 +1,21 @@
+<!-- checkin.wxml -->
+<view class="container">
+  <view class="title">
+    <text>请选择课程：</text>
+    <picker bindchange="onCourseChange" value="{{0}}" range="{{courseOptions}}">
+      <view class="picker-content">
+        <text class="selected-course">{{selectedCourse}}</text>
+        <image class="picker-icon" src="../../../asset/imgs/down.png"></image>
+      </view>
+    </picker>
+  </view>
+
+  <view class="students-list">
+    <block wx:for="{{students}}" wx:key="index">
+      <view class="student-item">
+        <text class="student-name">{{item.name}}</text>
+        <text class="check-status {{item.signed ? 'signed' : 'unsigned'}}">{{item.signed ? '已签到' : '未签到'}}</text>
+      </view>
+    </block>
+  </view>
+</view>

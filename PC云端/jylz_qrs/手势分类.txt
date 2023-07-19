@@ -1,0 +1,33 @@
+static HI_VOID HandClassifyAiProcess(VIDEO_FRAME_INFO_S frm, VO_LAYER voLayer, VO_CHN voChn)
+{
+    int ret;
+    if (GetCfgBool("hand_classify_switch:support_hand_classify", true)) {
+        if (g_workPlug.model == 0) {
+            ret = Yolo2HandDetectResnetClassifyLoad(&g_workPlug.model);
+            if (ret < 0) {
+                g_workPlug.model = 0;
+                SAMPLE_CHECK_EXPR_GOTO(ret < 0, HAND_RELEASE,
+                    "load hand classify model err, ret=%#x\n", ret);
+            }
+        }
+
+        VIDEO_FRAME_INFO_S resizeFrm;
+        ret = MppFrmResize(&frm, &resizeFrm, HAND_FRM_WIDTH, HAND_FRM_HEIGHT);
+        ret = Yolo2HandDetectResnetClassifyCal(g_workPlug.model, &resizeFrm, &frm);
+        SAMPLE_CHECK_EXPR_GOTO(ret < 0, HAND_RELEASE,
+            "hand classify plug cal FAIL, ret=%#x\n", ret);
+
+        ret = HI_MPI_VO_SendFrame(voLayer, voChn, &frm, 0);
+        SAMPLE_CHECK_EXPR_GOTO(ret != HI_SUCCESS, HAND_RELEASE,
+            "HI_MPI_VO_SendFrame fail, Error(%#x)\n", ret);
+
+        MppFrmDestroy(&resizeFrm);
+    }
+
+    HAND_RELEASE:
+        ret = HI_MPI_VPSS_ReleaseChnFrame(g_aicMediaInfo.vpssGrp, g_aicMediaInfo.vpssChn0, &frm);
+        if (ret != HI_SUCCESS) {
+            SAMPLE_PRT("Error(%#x),HI_MPI_VPSS_ReleaseChnFrame failed,Grp(%d) chn(%d)!\n",
+                ret, g_aicMediaInfo.vpssGrp, g_aicMediaInfo.vpssChn0);
+        }
+}

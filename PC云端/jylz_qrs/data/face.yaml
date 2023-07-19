@@ -1,0 +1,12 @@
+path: D:\yolo\face_data_wider_yolo\images
+train: D:\yolo\face_data_wider_yolo\images\train
+val: D:\yolo\face_data_wider_yolo\images\val
+
+nc: 1
+
+names:
+  0: face
+
+
+
+

@@ -1,0 +1,14 @@
+cd  /home/openharmony/sdk_linux/sample/build
+
+make ai_sample_clean && make ai_sample
+
+
+mount -o nolock,addr=192.168.200.1 -t nfs 192.168.200.1:/d/nfs /mnt
+cp /mnt/ohos_camera_ai_demo  /userdata/
+cd /userdata/
+./ohos_camera_ai_demo 1
+
+
+
+mount -o nolock,addr=192.168.200.1 -t nfs 192.168.200.1:/d/nfs /mnt
+cp /mnt/ohos_camera_uart_demo  /userdata

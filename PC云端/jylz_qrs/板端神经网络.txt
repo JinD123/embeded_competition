@@ -1,0 +1,21 @@
+1、config vi
+配置VI参数（视频输入参数，VI：通过MIPI Rx（含MIPI接口、LVDS接口和HISPI接口，SLVS-EC，BT.1120，BT.656，BT.601，DC等接口接收视频数据。VI将接收到的数据存入到指定的内存区域，在此过程中，VI可以对接收到的原始视频图像数据进行处理，实现视频数据的采集。）（感觉这部分应该不用考虑）
+结构体：
+SAMPLE_COMM_VI_GetSensorInfo接口是获取Sensor信息，该接口是对SAMPLE_VI_CONFIG_S结构体的配置：									SAMPLE_VI_CONFIG_S
+SAMPLE_VI_INFO_S：
+其围绕SAMPLE_SENSOR_INFO_S、SAMPLE_DEV_INFO_S、SAMPLE_PIPE_INFO_S、SAMPLE_CHN_INFO_S、SAMPLE_SNAP_INFO_S
+结构体来展开，其每个结果体成员定义如下：
+
+
+SAMPLE_COMM_VI_GetSensorInfo接口实现：
+stSnsInfo
+stSnapInfo
+stPipeInfo
+stSnsInfo
+
+
+2、get picture size
+SAMPLE_COMM_VI_GetSizeBySensor接口通过sensor型号来获取图片的大小，通过enPicSize输出，如PIC_1080P，实现接口如下。
+根据SAMPLE_COMM_VI_GetSizeBySensor接口输出的enPicSize来得到图片的width和height，实现方式通过SAMPLE_COMM_SYS_GetPicSize来实现。
+
+3、配置视频缓冲池

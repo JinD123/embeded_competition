@@ -1,0 +1,39 @@
+/* index.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-text {
+  margin-top: 5px;
+}
+
+
+.image {
+  width: 1px;
+  height: 1px;
+  margin-right: 100px;
+}

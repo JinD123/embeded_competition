@@ -1,0 +1,48 @@
+/* checkin.wxss */
+.container {
+  padding: 20px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.selected-course {
+  margin-right: 2px;
+}
+
+.picker-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.students-list {
+  margin-top: 20px;
+}
+
+.student-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.student-name {
+  font-weight: bold;
+}
+
+.check-status {
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.unsigned {
+  background-color: #ff6600;
+}
+
+.signed {
+  background-color: #00cc00;
+}

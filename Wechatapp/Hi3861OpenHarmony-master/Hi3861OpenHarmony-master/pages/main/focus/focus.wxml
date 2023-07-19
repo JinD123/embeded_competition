@@ -1,0 +1,32 @@
+<!-- focus.wxml -->
+<view class="container">
+  <view class="title">
+    <text>请选择课程：</text>
+    <picker bindchange="onCourseChange" value="{{0}}" range="{{courseOptions}}">
+      <view class="picker-content">
+        <text class="selected-course">{{selectedCourse}}</text>
+        <image class="picker-icon" src="../../../asset/imgs/down.png"></image>
+      </view>
+    </picker>
+  </view>
+
+  <view class="sub-page">
+    <text class="sub-page-title">课堂实时专注度</text>
+    <view class="table">
+      <block wx:for="{{focusData}}" wx:key="index">
+        <view class="table-row">
+          <image class="icon" src="{{item.icon}}" mode="widthFix"></image>
+          <text class="table-type">{{item.type}}</text>
+          <text class="table-value">{{item.value}}</text>
+        </view>
+      </block>
+    </view>
+    <text class="analysis">
+    <text wx:if="{{analysisStyle == 'good'}}" style="color: green;">{{analysisText}}</text>
+    <text wx:if="{{analysisStyle == 'average'}}" style="color: rgb(255, 208, 0);">{{analysisText}}</text>
+    <text wx:if="{{analysisStyle == 'bad'}}" style="color: red;">{{analysisText}}</text>
+  </text>
+
+  </view>
+  
+</view>
